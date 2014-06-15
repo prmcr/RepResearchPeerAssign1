@@ -21,6 +21,8 @@ abline(v = mean(steps.date$steps), col = "blue", lwd = 2)
 abline(v = median(steps.date$steps), col = "red", lwd = 2)
 dev.off()
 
+format(round(mean(steps.date$steps), 2), nsmall = 2)
+
 steps.interval <- aggregate(act.na$steps, list(act.na$interval), mean) 
 names(steps.interval) <- c("interval","steps")
 summary(steps.interval)
